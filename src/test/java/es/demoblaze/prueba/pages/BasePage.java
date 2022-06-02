@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class HomePage extends AbstractPage {
+public class BasePage extends AbstractPage {
 
     public static final String PAGE_URL = "https://www.demoblaze.com/index.html";
 
@@ -17,7 +17,7 @@ public class HomePage extends AbstractPage {
     @FindBy(id = "nameofuser")
     private WebElement nameOfUser;
 
-    HomePage(WebDriver driver) {
+    BasePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

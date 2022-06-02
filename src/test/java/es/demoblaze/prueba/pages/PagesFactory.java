@@ -11,7 +11,7 @@ public class PagesFactory {
 
     // Aquí se añaden las páginas que se creen
     private final LoginPage loginPage;
-    private final HomePage homePage;
+    private final BasePage basePage;
 
 
     public PagesFactory(WebDriver driver) {
@@ -19,7 +19,7 @@ public class PagesFactory {
 
         // Aquí se inicializan las páginas
         loginPage = new LoginPage(driver);
-        homePage = new HomePage(driver);
+        basePage = new BasePage(driver);
     }
 
     public static void start(WebDriver driver) {

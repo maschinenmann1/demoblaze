@@ -1,6 +1,6 @@
 package es.demoblaze.prueba.stepdefs;
 
-import es.demoblaze.prueba.pages.HomePage;
+import es.demoblaze.prueba.pages.BasePage;
 import es.demoblaze.prueba.pages.LoginPage;
 import es.demoblaze.prueba.pages.PagesFactory;
 import io.cucumber.java.en.And;
@@ -13,17 +13,17 @@ public class LoginPageSteps {
 
     // Creamos una instancia de pages factory
     PagesFactory pf = PagesFactory.getInstance();
-    HomePage hp = pf.getHomePage();
+    BasePage bp = pf.getBasePage();
     LoginPage lp = pf.getLoginPage();
 
     @Given("the user is on the home page")
     public void userInHomePage() {
-        hp.navigateTo(HomePage.PAGE_URL);
+        bp.navigateTo(BasePage.PAGE_URL);
     }
 
     @And("the user clicks the login button in the home page")
     public void clickLoginButtonInHome() {
-        hp.clickLoginButton();
+        bp.clickLoginButton();
     }
 
 
@@ -49,7 +49,7 @@ public class LoginPageSteps {
 
     @Then("the user is logged successfully")
     public void theUserIsLoggedSuccessfully() {
-        Assert.assertTrue("The user isnt logged", hp.isNameOfUserDisplayed());
+        Assert.assertTrue("The user isnt logged", bp.isNameOfUserDisplayed());
     }
 
     @Then("the user can see the error alert")
